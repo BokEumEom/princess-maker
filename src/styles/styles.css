@@ -138,6 +138,153 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* 새로운 스토리 알림 */
+.new-story {
+  margin-top: 20px;
+  padding: 1rem;
+  background: linear-gradient(135deg, #fef9c3, #fcd34d);
+  border: 2px solid #f59e0b;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 알림 헤더 */
+.new-story-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #b45309;
+}
+
+.new-story-header i {
+  font-size: 1.5rem;
+  color: #f59e0b;
+}
+
+/* 알림 텍스트 */
+.new-story-text {
+  font-size: 1rem;
+  color: #5f370e;
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* StoryProgress 스타일 */
+.story-progress {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.progress-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #4aa9ff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* 타임라인 스타일 */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  width: 2px;
+  height: 100%;
+  background: #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #4aa9ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content {
+  background: #f7f9fc;
+  padding: 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.timeline-item.highlight .timeline-icon {
+  background: #ff9800;
+}
+
+.timeline-item.highlight .timeline-content {
+  background: #fff4e5;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* 결과 페이지 스타일 */
 .summary-page {
   display: flex;

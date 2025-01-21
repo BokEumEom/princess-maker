@@ -68,7 +68,11 @@ const Home = () => {
           />
           {newStory && (
             <div className="new-story">
-              <p>새로운 스토리: {newStory}</p>
+              <div className="new-story-header">
+                <i className="fas fa-scroll"></i>
+                <span>새로운 스토리 이벤트</span>
+              </div>
+              <p className="new-story-text">{newStory}</p>
             </div>
           )}
         </>
