@@ -43,8 +43,14 @@ const Home = () => {
   };
 
   const navigateToSummary = () => {
-    navigate("/summary", { state: { avatar } }); // SummaryPage로 데이터 전달
-  };
+    // 복제 가능한 avatar 데이터만 추출
+    const safeAvatar = {
+      ...avatar,
+      storyProgress: avatar.storyProgress.map(({ id, text }) => ({ id, text })), // 함수 제거
+    };
+  
+    navigate("/summary", { state: { avatar: safeAvatar } });
+  };  
 
   if (!questions || questions.length === 0) {
     return <div>질문 데이터가 없습니다. 나중에 다시 시도해주세요.</div>;

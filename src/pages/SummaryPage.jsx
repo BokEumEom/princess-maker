@@ -7,20 +7,16 @@ import endings from "../data/endings";
 const SummaryPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
-  // location.state에서 avatar 가져오기
   const avatar = location.state?.avatar;
 
-  // 데이터가 없으면 홈으로 리다이렉트
   useEffect(() => {
     if (!avatar) {
-      console.log("No avatar data. Redirecting to Home...");
       navigate("/");
     }
   }, [avatar, navigate]);
 
   if (!avatar) {
-    return null; // 리다이렉트 대기 중
+    return null;
   }
 
   const getEnding = (stats) => {
@@ -39,15 +35,33 @@ const SummaryPage = () => {
 
   return (
     <div className="summary-page">
-      <h2>결과 요약</h2>
-      <Avatar avatar={avatar} />
-      <StoryProgress storyProgress={avatar.storyProgress} />
-      <div className="ending-container">
-        <h3>최종 엔딩</h3>
-        <p>{ending.message}</p>
-        <img src={ending.image} alt="Ending Illustration" />
+      <h2 className="summary-title">결과 요약</h2>
+
+      {/* 아바타 */}
+      <div className="summary-avatar">
+        <Avatar avatar={avatar} />
       </div>
-      <button onClick={() => navigate("/")}>다시 시작하기</button>
+
+      {/* 스토리 진행 */}
+      <div className="story-progress-container">
+        <StoryProgress storyProgress={avatar.storyProgress} />
+      </div>
+
+      {/* 최종 엔딩 */}
+      <div className="ending-card">
+        <h3 className="ending-title">최종 엔딩</h3>
+        <p className="ending-message">{ending.message}</p>
+        <img
+          src={ending.image}
+          alt="Ending Illustration"
+          className="ending-image"
+        />
+      </div>
+
+      {/* 다시 시작 버튼 */}
+      <button className="restart-btn" onClick={() => navigate("/")}>
+        다시 시작하기
+      </button>
     </div>
   );
 };

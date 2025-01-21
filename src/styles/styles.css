@@ -11,9 +11,8 @@ body {
   color: #333;
 }
 
-/* 홈 컨테이너 */
-.home-container,
-.summary-page {
+/* 공통 컨테이너 스타일 */
+.container {
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
@@ -23,40 +22,87 @@ body {
   text-align: center;
 }
 
-/* 아바타 컨테이너 */
+/* Avatar 컴포넌트 스타일 */
+
+/* 전체 컨테이너 */
+.avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f7f9fc, #eaf1f7);
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* 아바타 이미지 */
 .avatar-container {
-  position: relative;
-  width: 180px; /* 컨테이너 너비 */
-  height: 180px; /* 컨테이너 높이 */
-  margin: 0 auto; /* 중앙 정렬 */
-  border-radius: 50%; /* 원형 컨테이너 */
-  overflow: hidden; /* 원 밖으로 텍스트/이미지 넘침 방지 */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 200px;
 }
 
-/* 아바타 능력치 */
-.avatar-stats {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.6); /* 반투명 배경 */
-  color: white;
-  padding: 10px 5px;
+.avatar-image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 능력치 컨테이너 */
+.stats-container {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 능력치 바 */
+.stat-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  width: 80px; /* 고정 너비 */
   font-size: 0.9rem;
-  text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-/* 능력치 강조 */
-.avatar-stats p {
-  margin: 5px 0;
   font-weight: bold;
+  color: #333;
 }
 
+/* 진행 바 */
+.progress-bar {
+  flex-grow: 1;
+  background: #ddd;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
 
-/* 질문 카드 */
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 능력치 색상 */
+.progress-fill.charm {
+  background: #4aa9ff;
+}
+
+.progress-fill.health {
+  background: #4caf50;
+}
+
+.progress-fill.intelligence {
+  background: #ff9800;
+}
+
+/* 질문 카드 스타일 */
 .question-card h3 {
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
@@ -92,50 +138,77 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* 결과 피드백 */
-.result-feedback {
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: left;
-  margin-top: 1rem;
-  color: #555;
+/* 결과 페이지 스타일 */
+.summary-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a2c4f5, #e8eaf6);
+  padding: 2rem;
 }
 
-/* 요약 페이지 */
-.summary-page h2 {
+.summary-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.summary-avatar {
   margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #4aa9ff;
 }
 
-.custom-message {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: #f9fafe;
-  border: 1px solid #cfe3fc;
+.story-progress-container {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  background: #fff;
   border-radius: 10px;
-  text-align: left;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
 
-.custom-message h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
+/* 엔딩 카드 스타일 */
+.ending-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.ending-title {
+  font-size: 1.8rem;
+  font-weight: bold;
   color: #4aa9ff;
+  margin-bottom: 1rem;
 }
 
-.custom-message p {
+.ending-message {
   font-size: 1.2rem;
-  color: #555;
   line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
-/* 버튼 스타일 */
-.summary-btn {
+.ending-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* 공통 버튼 스타일 */
+.button {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
-  color: #ffffff;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
   background: #4aa9ff;
   border: none;
   border-radius: 10px;
@@ -144,62 +217,25 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.summary-btn:hover {
+.button:hover {
   background: #358fd4;
   transform: translateY(-3px);
 }
 
-.summary-btn:active {
+.button:active {
   background: #2c7bb6;
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-.new-story {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
+/* 애니메이션 */
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
-}
-
-.ending-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.ending-message {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.ending-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.restart-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.restart-btn:hover {
-  background-color: #0056b3;
 }
