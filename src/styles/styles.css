@@ -390,18 +390,20 @@ body {
 /* 모바일 최적화 */
 @media (max-width: 768px) {
   .container {
-    padding: 1.5rem;
-    margin: 1rem auto;
+    padding: 1rem; /* 모바일에서 패딩 줄임 */
   }
 
   .question-card {
-    max-width: 90%; /* 카드가 화면 크기에 맞게 축소 */
-    min-height: 200px; /* 모바일에서 카드 크기를 조정 */
-    padding: 1rem;
+    min-height: 220px; /* 모바일에서 최소 높이 */
+    padding: 1rem; /* 모바일에서 내부 여백 줄임 */
+  }
+
+  .question-card h3 {
+    font-size: 1.2rem; /* 모바일에서 텍스트 크기 줄임 */
   }
 
   .option-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem; /* 버튼 크기 축소 */
+    padding: 0.8rem; /* 모바일에서 버튼 패딩 줄임 */
+    font-size: 0.9rem; /* 모바일에서 버튼 텍스트 크기 줄임 */
   }
 }
