@@ -22,173 +22,6 @@ body {
   text-align: center;
 }
 
-/* Avatar 컴포넌트 스타일 */
-
-/* 전체 컨테이너 */
-.avatar-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  background: linear-gradient(135deg, #f7f9fc, #eaf1f7);
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-/* 아바타 이미지 */
-.avatar-container {
-  width: 100%;
-  max-width: 200px;
-}
-
-.avatar-image {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* 능력치 컨테이너 */
-.stats-container {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* 능력치 바 */
-.stat-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.stat-label {
-  width: 80px; /* 고정 너비 */
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #333;
-}
-
-/* 진행 바 */
-.progress-bar {
-  flex-grow: 1;
-  background: #ddd;
-  height: 8px;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.5s ease, background-color 0.3s ease;
-}
-
-/* 능력치 색상 */
-.progress-fill.charm {
-  background: #4aa9ff;
-}
-
-.progress-fill.health {
-  background: #4caf50;
-}
-
-.progress-fill.intelligence {
-  background: #ff9800;
-}
-
-/* 질문 카드 스타일 */
-.question-card h3 {
-  margin-bottom: 1.5rem;
-  font-size: 1.4rem;
-  color: #4aa9ff;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.option-btn {
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: none;
-  background: #4aa9ff;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.option-btn:hover {
-  background: #358fd4;
-  transform: translateY(-2px);
-}
-
-.option-btn:active {
-  background: #2c7bb6;
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* 새로운 스토리 알림 */
-.new-story {
-  margin-top: 20px;
-  padding: 1rem;
-  background: linear-gradient(135deg, #fef9c3, #fcd34d);
-  border: 2px solid #f59e0b;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* 알림 헤더 */
-.new-story-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #b45309;
-}
-
-.new-story-header i {
-  font-size: 1.5rem;
-  color: #f59e0b;
-}
-
-/* 알림 텍스트 */
-.new-story-text {
-  font-size: 1rem;
-  color: #5f370e;
-  text-align: center;
-  margin-top: 0.5rem;
-  line-height: 1.4;
-}
-
-/* 애니메이션 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* StoryProgress 스타일 */
 .story-progress {
   background: #fff;
@@ -204,150 +37,6 @@ body {
   color: #4aa9ff;
   margin-bottom: 1rem;
   text-align: center;
-}
-
-/* 타임라인 스타일 */
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 1rem;
-  width: 2px;
-  height: 100%;
-  background: #ddd;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-icon {
-  position: absolute;
-  left: 0;
-  top: 0.2rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  background: #4aa9ff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 0.8rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-content {
-  background: #f7f9fc;
-  padding: 0.8rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-content p {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
-}
-
-.timeline-item.highlight .timeline-icon {
-  background: #ff9800;
-}
-
-.timeline-item.highlight .timeline-content {
-  background: #fff4e5;
-}
-
-/* 애니메이션 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 결과 페이지 스타일 */
-.summary-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #a2c4f5, #e8eaf6);
-  padding: 2rem;
-}
-
-.summary-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.summary-avatar {
-  margin-bottom: 2rem;
-}
-
-.story-progress-container {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 2rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-}
-
-/* 엔딩 카드 스타일 */
-.ending-card {
-  text-align: center;
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.ending-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #4aa9ff;
-  margin-bottom: 1rem;
-}
-
-.ending-message {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-
-.ending-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
 }
 
 /* 공통 버튼 스타일 */
@@ -405,5 +94,34 @@ body {
   .option-btn {
     padding: 0.8rem; /* 모바일에서 버튼 패딩 줄임 */
     font-size: 0.9rem; /* 모바일에서 버튼 텍스트 크기 줄임 */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+  .question-card h3 {
+    font-size: 1rem;
+  }
+  .option-btn {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+  .avatar-wrapper {
+    max-width: 90%;
+  }
+  .npc-dialogue {
+    max-width: 90%;
+    padding: 1rem;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .question-card {
+    min-height: auto;
   }
 }

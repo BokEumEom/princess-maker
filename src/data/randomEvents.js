@@ -16,7 +16,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.3, // 30% 확률로 발생
-    image: "/assets/images/storm.png",
+    image: "/assets/images/storm.webp",
   },
   {
     id: "treasure_chest",
@@ -35,7 +35,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.2, // 20% 확률로 발생
-    image: "/assets/images/treasure_chest.png",
+    image: "/assets/images/treasure_chest.webp",
   },
   {
     id: "mysterious_figure",
@@ -54,7 +54,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.25, // 25% 확률로 발생
-    image: "/assets/images/mysterious_figure.png",
+    image: "/assets/images/mysterious_figure.webp",
   },
   {
     id: "wild_animal",
@@ -73,7 +73,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.15, // 15% 확률로 발생
-    image: "/assets/images/wild_animal.png",
+    image: "/assets/images/wild_animal.webp",
   },
 ];
 

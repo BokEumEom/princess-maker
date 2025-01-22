@@ -6,8 +6,10 @@ import useAvatar from "../hooks/useAvatar";
 import Avatar from "../components/Avatar";
 import QuestionCard from "../components/QuestionCard";
 import StoryProgress from "../components/StoryProgress";
-import NPCDialogue from "../components/NPCDialogue"; // NPC 대화창 컴포넌트 추가
-import npcs from "../data/npcs"; // npcs 데이터 가져오기
+import NPCDialogue from "../components/NPCDialogue";
+import RandomEventModal from "../components/RandomEventModal"; // 랜덤 이벤트 모달 추가
+import npcs from "../data/npcs";
+import randomEvents from "../data/randomEvents"; // 랜덤 이벤트 데이터 가져오기
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,7 +17,8 @@ const Home = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [newStory, setNewStory] = useState(null);
   const [acquiredItem, setAcquiredItem] = useState(null);
-  const [currentNPC, setCurrentNPC] = useState(null); // 현재 상호작용 중인 NPC 상태
+  const [currentNPC, setCurrentNPC] = useState(null);
+  const [currentEvent, setCurrentEvent] = useState(null); // 현재 발생한 랜덤 이벤트 상태
 
   useEffect(() => {
     const triggeredEvents = new Set(avatar.storyProgress.map((e) => e.id));
@@ -47,14 +50,17 @@ const Home = () => {
     if (option.interactWithNPC) {
       const npc = npcs.find((n) => n.id === option.interactWithNPC);
       if (npc) {
-        setCurrentNPC(npc); // NPC 대화창 표시
-        interactWithNPC(npc.id); // NPC 효과 적용
+        setCurrentNPC(npc);
+        interactWithNPC(npc.id);
       }
     }
 
     // 랜덤 이벤트 발생
     if (option.triggerEvent) {
-      triggerRandomEvent();
+      const event = randomEvents.find((e) => e.condition());
+      if (event) {
+        setCurrentEvent(event); // 랜덤 이벤트 설정
+      }
     }
 
     if (currentQuestionIndex < questions.length - 1) {
@@ -65,6 +71,12 @@ const Home = () => {
     }
 
     setNewStory(null);
+  };
+
+  const handleEventSelect = (option) => {
+    updateAvatar(option.effect); // 선택지 효과 적용
+    setNewStory(option.resultText); // 결과 텍스트 표시
+    setCurrentEvent(null); // 이벤트 모달 닫기
   };
 
   const navigateToSummary = () => {
@@ -126,7 +138,16 @@ const Home = () => {
       {currentNPC && (
         <NPCDialogue
           npc={currentNPC}
-          onClose={() => setCurrentNPC(null)} // 대화창 닫기
+          onClose={() => setCurrentNPC(null)}
+        />
+      )}
+
+      {/* 랜덤 이벤트 모달 표시 */}
+      {currentEvent && (
+        <RandomEventModal
+          event={currentEvent}
+          onSelect={(option) => handleEventSelect(option)}
+          onClose={() => setCurrentEvent(null)}
         />
       )}
     </div>
