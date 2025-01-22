@@ -1,6 +1,9 @@
 import React from "react";
 
 const Avatar = ({ avatar }) => {
+  console.log("Avatar:", avatar);
+  console.log("Stats:", avatar?.stats);
+  
   if (!avatar) return <div>Loading...</div>;
 
   const { stats } = avatar;

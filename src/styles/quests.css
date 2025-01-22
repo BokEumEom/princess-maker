@@ -1,0 +1,190 @@
+/* Quest List Container */
+.quest-list-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 260px; /* 기존 320px에서 축소 */
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 14px; /* 기존 16px에서 약간 축소 */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  padding: 1.2rem; /* 기존 1.5rem에서 축소 */
+  backdrop-filter: blur(12px);
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideIn 0.4s ease-out;
+}
+
+.quest-list-container.hidden {
+  opacity: 0;
+  transform: translateX(120%);
+  pointer-events: none;
+  animation: slideOut 0.4s ease-in;
+}
+
+/* Quest List Header */
+.quest-list h3 {
+  font-size: 1.2rem; /* 기존 1.4rem에서 축소 */
+  margin-bottom: 1rem; /* 간격도 축소 */
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Quest Item */
+.quest-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px; /* 기존 12px에서 축소 */
+  padding: 0.8rem; /* 기존 1rem에서 축소 */
+  margin-bottom: 1rem; /* 간격 축소 */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quest-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Quest Header */
+.quest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem; /* 간격 축소 */
+}
+
+.quest-header h4 {
+  font-size: 1rem; /* 기존 1.2rem에서 축소 */
+  color: #4aa9ff;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.quest-status {
+  font-size: 0.75rem; /* 기존 0.85rem에서 축소 */
+  font-weight: bold;
+  padding: 0.3rem 0.6rem; /* 패딩 축소 */
+  border-radius: 10px; /* 기존 12px에서 축소 */
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; /* 간격 축소 */
+}
+
+.quest-status.completed {
+  background: rgba(50, 205, 50, 0.2);
+  color: #32cd32;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.quest-status.in-progress {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Quest Description */
+.quest-description {
+  font-size: 0.9rem; /* 기존 1rem에서 축소 */
+  color: #ddd;
+  margin: 0 0 0.8rem 0; /* 간격 축소 */
+  line-height: 1.4; /* 줄 간격 축소 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Reward Button */
+.quest-reward-button {
+  background: linear-gradient(90deg, #4aa9ff, #3a8fd9);
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* 기존 12px에서 축소 */
+  padding: 0.6rem 0.8rem; /* 패딩 축소 */
+  font-size: 0.85rem; /* 텍스트 크기 축소 */
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.quest-reward-button:hover {
+  background: linear-gradient(90deg, #3a8fd9, #357cba);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quest-reward-button:active {
+  transform: scale(0.97);
+}
+
+/* Toggle Button */
+.quest-list-toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #4aa9ff, #3a8fd9);
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* 기존 12px에서 축소 */
+  padding: 0.6rem; /* 패딩 축소 */
+  font-size: 0.9rem; /* 텍스트 크기 축소 */
+  cursor: pointer;
+  z-index: 1001;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* 간격 축소 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quest-list-toggle-button:hover {
+  background: linear-gradient(90deg, #3a8fd9, #357cba);
+  transform: translateY(-2px);
+}
+
+.quest-list-toggle-button:active {
+  transform: scale(0.97);
+}
+
+/* Progress Bar */
+.quest-progress {
+  background: rgba(224, 224, 224, 0.2);
+  border-radius: 8px; /* 기존 10px에서 축소 */
+  overflow: hidden;
+  height: 10px; /* 기존 12px에서 축소 */
+  margin-top: 0.5rem; /* 간격 축소 */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quest-progress-bar {
+  background: linear-gradient(90deg, #4aa9ff, #007bff);
+  height: 100%;
+  transition: width 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}

@@ -17,7 +17,7 @@ const useAvatar = () => {
     setAvatar((prev) => {
       const updatedStats = { ...prev.stats };
       Object.keys(effect).forEach((key) => {
-        updatedStats[key] = Math.max(0, (updatedStats[key] || 0) + effect[key]); // 음수 방지
+        updatedStats[key] = Math.max(0, Math.min(100, (updatedStats[key] || 0) + effect[key])); // 0~100 사이로 제한
       });
       return { ...prev, stats: updatedStats };
     });

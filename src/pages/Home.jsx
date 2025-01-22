@@ -10,16 +10,27 @@ import NPCDialogue from "../components/NPCDialogue";
 import RandomEventModal from "../components/RandomEventModal";
 import npcs from "../data/npcs";
 import randomEvents from "../data/randomEvents";
-import useTemporaryState from "../hooks/useTemporaryState"; // 커스텀 훅
+import useTemporaryState from "../hooks/useTemporaryState";
+import QuestList from "../components/QuestList";
+import quests from "../data/quests";
+import useQuests from "../hooks/useQuests"; // useQuests 훅 추가
 
 const Home = () => {
   const navigate = useNavigate();
   const { avatar, updateAvatar, updateStoryProgress, acquireItem, interactWithNPC, triggerRandomEvent } = useAvatar();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [newStory, setNewStory] = useTemporaryState(null, 3000); // 상태 초기화 커스텀 훅 사용
+  const [newStory, setNewStory] = useTemporaryState(null, 3000);
   const [acquiredItem, setAcquiredItem] = useTemporaryState(null, 3000);
   const [currentNPC, setCurrentNPC] = useState(null);
   const [currentEvent, setCurrentEvent] = useState(null);
+  const [isQuestListVisible, setIsQuestListVisible] = useState(true);
+
+  const toggleQuestList = () => {
+    setIsQuestListVisible((prev) => !prev);
+  };
+
+  // useQuests 훅 사용
+  const { currentQuests, completeQuest } = useQuests(avatar, quests, acquireItem, updateAvatar);
 
   // 스토리 이벤트 트리거
   useEffect(() => {
@@ -86,6 +97,14 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <button className="quest-list-toggle-button" onClick={toggleQuestList}>
+        {isQuestListVisible ? "퀘스트 숨기기" : "퀘스트 보기"}
+      </button>
+      {isQuestListVisible && (
+        <div className="quest-list-container">
+          <QuestList quests={currentQuests} onComplete={completeQuest} />
+        </div>
+      )}
       <Avatar avatar={avatar} />
       {currentQuestionIndex < storyQuestions.length ? (
         <>
