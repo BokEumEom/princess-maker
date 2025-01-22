@@ -34,6 +34,27 @@ const items = [
     effect: { luck: 10 },
     image: "/assets/images/lucky_coin.webp",
   },
+  {
+    id: "elegant_gown",
+    name: "우아한 드레스",
+    description: "가장 화려한 옷을 입고 행사에 참석하여 매력을 높입니다.",
+    effect: { charm: 10 },
+    image: "/assets/images/elegant_gown.webp",
+  },
+  {
+    id: "inspiring_speech",
+    name: "감동적인 연설문",
+    description: "연설을 통해 백성들의 신뢰와 지지를 얻습니다.",
+    effect: { charm: 10, hope: 5 },
+    image: "/assets/images/inspiring_speech.webp",
+  },
+  {
+    id: "royal_treasure",
+    name: "왕실 보물",
+    description: "왕국의 재정을 강화하고 백성들의 안정을 도모합니다.",
+    effect: { wealth: 20 },
+    image: "/assets/images/royal_treasure.webp",
+  },
 ];
 
 export default items;

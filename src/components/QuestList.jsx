@@ -12,11 +12,7 @@ const QuestList = ({ quests, onComplete }) => {
           <div key={quest.id} className="quest-item">
             <div className="quest-header">
               <h4>{quest.title}</h4>
-              <p
-                className={`quest-status ${
-                  quest.isCompleted ? "completed" : "in-progress"
-                }`}
-              >
+              <p className={`quest-status ${quest.isCompleted ? "completed" : "in-progress"}`}>
                 {quest.isCompleted ? "✅ 완료" : "⌛ 진행 중"}
               </p>
             </div>
@@ -25,15 +21,12 @@ const QuestList = ({ quests, onComplete }) => {
               <div className="quest-progress">
                 <div
                   className="quest-progress-bar"
-                  style={{ width: `${quest.progress}%` }}
+                  style={{ width: `${quest.progress || 0}%` }}
                 ></div>
               </div>
             )}
             {quest.isCompleted && (
-              <button
-                className="quest-reward-button"
-                onClick={() => onComplete(quest.id)}
-              >
+              <button className="quest-reward-button" onClick={() => onComplete(quest.id)}>
                 보상 받기
               </button>
             )}
@@ -51,7 +44,7 @@ QuestList.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       isCompleted: PropTypes.bool.isRequired,
-      progress: PropTypes.number, // 추가: 진행률
+      progress: PropTypes.number,
     })
   ).isRequired,
   onComplete: PropTypes.func.isRequired,

@@ -13,7 +13,7 @@ import randomEvents from "../data/randomEvents";
 import useTemporaryState from "../hooks/useTemporaryState";
 import QuestList from "../components/QuestList";
 import quests from "../data/quests";
-import useQuests from "../hooks/useQuests"; // useQuests 훅 추가
+import useQuests from "../hooks/useQuests";
 
 const Home = () => {
   const navigate = useNavigate();

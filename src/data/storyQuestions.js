@@ -154,7 +154,7 @@ const storyQuestions = [
         text: "화재 진압을 위해 신속히 명령을 내린다.",
         effect: { 열정적: 3 },
         result: "긴급 대응 능력이 뛰어난 공주",
-        triggerEvent: "wild_animal", // 야생 동물 이벤트 발생
+        triggerEvent: "forest_fire", // 야생 동물 이벤트 발생
       },
       {
         text: "백성을 대피시키는 데 집중한다.",
@@ -195,7 +195,7 @@ const storyQuestions = [
         text: "처형을 명령하여 적들에게 경고한다.",
         effect: { 부정적: 3 },
         result: "단호한 전사",
-        triggerEvent: "mysterious_figure", // 신비로운 인물 이벤트 발생
+        triggerEvent: "bandit_attack", // 신비로운 인물 이벤트 발생
       },
       {
         text: "포로를 심문해 정보를 얻는다.",
@@ -212,7 +212,7 @@ const storyQuestions = [
         text: "숲을 탐험하여 소문의 진위를 확인한다.",
         effect: { 열정적: 3 },
         result: "모험적인 성격",
-        triggerEvent: "treasure_chest", // 보물 상자 이벤트 발생
+        triggerEvent: "forest_fire", // 보물 상자 이벤트 발생
       },
       {
         text: "병사를 보내 대신 조사하도록 한다.",
@@ -253,7 +253,7 @@ const storyQuestions = [
         text: "외부 지원을 요청하여 자원을 확보한다.",
         effect: { 회피적: 2, 희망적: 1 },
         result: "협력적 성격",
-        triggerEvent: "storm", // 폭풍우 이벤트 발생
+        triggerEvent: "royal_banquet", // 폭풍우 이벤트 발생
       },
       {
         text: "병자들을 외곽으로 추방하여 확산을 막는다.",
@@ -270,7 +270,7 @@ const storyQuestions = [
         text: "저주를 두려워하지 않고 보물을 사용한다.",
         effect: { 열정적: 3 },
         result: "대담한 전사",
-        triggerEvent: "mysterious_figure", // 신비로운 인물 이벤트 발생
+        triggerEvent: "mystic_ritual", // 신비로운 인물 이벤트 발생
       },
       {
         text: "보물을 안전하게 봉인하도록 명령한다.",

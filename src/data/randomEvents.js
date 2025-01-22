@@ -75,6 +75,82 @@ const randomEvents = [
     condition: () => Math.random() < 0.15, // 15% 확률로 발생
     image: "/assets/images/wild_animal.webp",
   },
+  {
+    id: "royal_banquet",
+    name: "왕실 연회 초대",
+    description: "이웃 왕국에서 왕실 연회에 초대받았습니다. 어떻게 하시겠습니까?",
+    options: [
+      {
+        text: "연회에 참석하여 외교적 관계를 강화한다.",
+        effect: { charm: 10, hope: 5 },
+        resultText: "연회에서 좋은 인상을 남겼습니다. 매력과 희망이 증가했습니다.",
+      },
+      {
+        text: "연회를 거절하고 왕국 문제에 집중한다.",
+        effect: { intelligence: 5 },
+        resultText: "연회를 거절하고 왕국 문제를 해결했습니다. 지능이 증가했습니다.",
+      },
+    ],
+    condition: () => Math.random() < 0.2, // 20% 확률로 발생
+    image: "/assets/images/royal_banquet.webp",
+  },
+  {
+    id: "forest_fire",
+    name: "숲 속에서 화재가 발생했습니다.",
+    description: "숲 속에서 화재가 발생했습니다. 어떻게 하시겠습니까?",
+    options: [
+      {
+        text: "화재 진압을 위해 병사를 보낸다.",
+        effect: { health: -5, intelligence: 5 },
+        resultText: "화재를 진압했지만 병사들이 다쳤습니다. 체력이 감소했지만 지능이 증가했습니다.",
+      },
+      {
+        text: "화재를 피해 마을로 돌아간다.",
+        effect: { health: 5, charm: 3 },
+        resultText: "화재를 피해 안전하게 마을로 돌아왔습니다. 체력과 매력이 증가했습니다.",
+      },
+    ],
+    condition: () => Math.random() < 0.15, // 15% 확률로 발생
+    image: "/assets/images/forest_fire.webp",
+  },
+  {
+    id: "bandit_attack",
+    name: "산적의 습격",
+    description: "여행 중 산적의 습격을 받았습니다. 어떻게 하시겠습니까?",
+    options: [
+      {
+        text: "산적과 맞서 싸운다.",
+        effect: { health: -10, intelligence: 5 },
+        resultText: "산적과 싸워 이겼지만 체력이 크게 감소했습니다. 지능이 증가했습니다.",
+      },
+      {
+        text: "산적에게 돈을 주고 지나간다.",
+        effect: { wealth: -20, charm: 5 },
+        resultText: "산적에게 돈을 주고 지나갔습니다. 재정이 감소했지만 매력이 증가했습니다.",
+      },
+    ],
+    condition: () => Math.random() < 0.1, // 10% 확률로 발생
+    image: "/assets/images/bandit_attack.webp",
+  },
+  {
+    id: "mystic_ritual",
+    name: "신비로운 의식",
+    description: "숲 속에서 신비로운 의식을 발견했습니다. 어떻게 하시겠습니까?",
+    options: [
+      {
+        text: "의식에 참여한다.",
+        effect: { intelligence: 10, health: -5 },
+        resultText: "의식에 참여하여 지능이 크게 증가했지만 체력이 감소했습니다.",
+      },
+      {
+        text: "의식을 무시하고 지나간다.",
+        effect: { charm: 5 },
+        resultText: "의식을 무시하고 지나갔습니다. 매력이 증가했습니다.",
+      },
+    ],
+    condition: () => Math.random() < 0.15, // 15% 확률로 발생
+    image: "/assets/images/mystic_ritual.webp",
+  },
 ];
 
 export default randomEvents;

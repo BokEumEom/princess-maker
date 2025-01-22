@@ -31,6 +31,22 @@ const npcs = [
     effect: {}, // 아이템을 구매하는 로직 추가 가능
     image: "/assets/images/wandering_merchant.webp",
   },
+  {
+    id: "diplomatic_advisor",
+    name: "외교 고문",
+    description: "외교적 문제를 해결하는 데 도움을 주는 전문가.",
+    dialogue: "외교적 문제는 신중함이 필요합니다. 제가 도와드리겠습니다.",
+    effect: { intelligence: 5, charm: 5 }, // 외교적 문제 해결 능력 향상
+    image: "/assets/images/diplomatic_advisor.webp",
+  },
+  {
+    id: "fire_chief",
+    name: "소방대장",
+    description: "화재 진압을 책임지는 소방대장. 위기 상황에서 냉철한 판단을 내립니다.",
+    dialogue: "화재는 신속한 대응이 중요합니다. 제가 지휘하겠습니다.",
+    effect: { health: 10, hope: 5 }, // 체력과 희망 증가
+    image: "/assets/images/fire_chief.webp",
+  },
 ];
 
 export default npcs;

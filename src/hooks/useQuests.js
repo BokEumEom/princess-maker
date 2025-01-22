@@ -3,18 +3,32 @@ import { useEffect, useState } from "react";
 const useQuests = (avatar, initialQuests, acquireItem, updateAvatar) => {
   const [currentQuests, setCurrentQuests] = useState(initialQuests);
 
-  // 퀘스트 완료 조건 확인
+  // 퀘스트 완료 조건 및 진행률 확인
   useEffect(() => {
     setCurrentQuests((prevQuests) =>
       prevQuests.map((quest) => {
         if (!quest.isCompleted) {
-          const isCompleted = quest.condition(quest.reward.item ? avatar.items : avatar.stats);
-          return { ...quest, isCompleted };
+          let conditionInput;
+          switch (quest.conditionType) {
+            case "stats":
+              conditionInput = avatar.stats || {};
+              break;
+            case "items":
+              conditionInput = avatar.items || [];
+              break;
+            case "npcs":
+              conditionInput = avatar.npcs || [];
+              break;
+            default:
+              conditionInput = null;
+          }
+          const { isCompleted, progress } = quest.condition(conditionInput);
+          return { ...quest, isCompleted, progress };
         }
         return quest;
       })
     );
-  }, [avatar.stats, avatar.items]); // currentQuests 제거
+  }, [avatar.stats, avatar.items, avatar.npcs]);
 
   // 퀘스트 완료 처리
   const completeQuest = (questId) => {
