@@ -4,7 +4,7 @@ const Avatar = ({ avatar }) => {
   if (!avatar) return <div>Loading...</div>;
 
   const { stats } = avatar;
-  const avatarImage = `/assets/images/princess01.png`;
+  const avatarImage = `/assets/images/unfinished_story_ending.png`;
 
   return (
     <div className="avatar-wrapper">

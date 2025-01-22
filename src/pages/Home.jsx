@@ -1,52 +1,47 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import questions from "../data/questions";
+import storyQuestions from "../data/storyQuestions";
 import storyEvents from "../data/storyEvents";
 import useAvatar from "../hooks/useAvatar";
 import Avatar from "../components/Avatar";
 import QuestionCard from "../components/QuestionCard";
 import StoryProgress from "../components/StoryProgress";
 import NPCDialogue from "../components/NPCDialogue";
-import RandomEventModal from "../components/RandomEventModal"; // 랜덤 이벤트 모달 추가
+import RandomEventModal from "../components/RandomEventModal";
 import npcs from "../data/npcs";
-import randomEvents from "../data/randomEvents"; // 랜덤 이벤트 데이터 가져오기
+import randomEvents from "../data/randomEvents";
+import useTemporaryState from "../hooks/useTemporaryState"; // 커스텀 훅
 
 const Home = () => {
   const navigate = useNavigate();
-  const { avatar, updateAvatar, updateStoryProgress, acquireItem, interactWithNPC, triggerRandomEvent } = useAvatar();
+  const { avatar, updateAvatar, updateStoryProgress, acquireItem, interactWithNPC } = useAvatar();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [newStory, setNewStory] = useState(null);
-  const [acquiredItem, setAcquiredItem] = useState(null);
+  const [newStory, setNewStory] = useTemporaryState(null, 3000); // 상태 초기화 커스텀 훅 사용
+  const [acquiredItem, setAcquiredItem] = useTemporaryState(null, 3000);
   const [currentNPC, setCurrentNPC] = useState(null);
-  const [currentEvent, setCurrentEvent] = useState(null); // 현재 발생한 랜덤 이벤트 상태
+  const [currentEvent, setCurrentEvent] = useState(null);
 
+  // 스토리 이벤트 트리거
   useEffect(() => {
     const triggeredEvents = new Set(avatar.storyProgress.map((e) => e.id));
-
     storyEvents.forEach((event) => {
-      const isTriggered = triggeredEvents.has(event.id);
-      const isConditionMet = event.condition(avatar.stats);
-
-      if (!isTriggered && isConditionMet) {
-        console.log("Triggered Story Event:", event.text);
+      if (!triggeredEvents.has(event.id) && event.condition(avatar.stats)) {
         updateStoryProgress(event);
         setNewStory(event.text);
         triggeredEvents.add(event.id);
       }
     });
-  }, [avatar.stats, avatar.storyProgress, updateStoryProgress]);
+  }, [avatar.stats, avatar.storyProgress, updateStoryProgress, setNewStory]);
 
+  // 질문 선택 처리
   const handleSelect = (effect, option) => {
     updateAvatar(effect);
 
-    // 아이템 획득
     if (option.acquireItem) {
       const item = acquireItem(option.acquireItem);
       setAcquiredItem(item);
-      setTimeout(() => setAcquiredItem(null), 3000);
     }
 
-    // NPC와 상호작용
     if (option.interactWithNPC) {
       const npc = npcs.find((n) => n.id === option.interactWithNPC);
       if (npc) {
@@ -55,30 +50,28 @@ const Home = () => {
       }
     }
 
-    // 랜덤 이벤트 발생
     if (option.triggerEvent) {
       const event = randomEvents.find((e) => e.condition());
       if (event) {
-        setCurrentEvent(event); // 랜덤 이벤트 설정
+        setCurrentEvent(event);
       }
     }
 
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < storyQuestions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
-      console.log("All questions completed.");
       navigateToSummary();
     }
-
-    setNewStory(null);
   };
 
+  // 랜덤 이벤트 처리
   const handleEventSelect = (option) => {
-    updateAvatar(option.effect); // 선택지 효과 적용
-    setNewStory(option.resultText); // 결과 텍스트 표시
-    setCurrentEvent(null); // 이벤트 모달 닫기
+    updateAvatar(option.effect);
+    setNewStory(option.resultText);
+    setCurrentEvent(null);
   };
 
+  // 요약 페이지 이동
   const navigateToSummary = () => {
     const safeAvatar = {
       ...avatar,
@@ -87,20 +80,18 @@ const Home = () => {
     navigate("/summary", { state: { avatar: safeAvatar } });
   };
 
-  if (!questions || questions.length === 0) {
+  if (!storyQuestions || storyQuestions.length === 0) {
     return <div>질문 데이터가 없습니다. 나중에 다시 시도해주세요.</div>;
   }
 
   return (
     <div className="home-container">
       <Avatar avatar={avatar} />
-
-      {currentQuestionIndex < questions.length ? (
+      {currentQuestionIndex < storyQuestions.length ? (
         <>
           <QuestionCard
-            question={questions[currentQuestionIndex]}
-            onSelect={(effect, option) => handleSelect(effect, option)}
-            triggerRandomEvent={triggerRandomEvent}
+            question={storyQuestions[currentQuestionIndex]}
+            onSelect={handleSelect}
           />
           {newStory && (
             <div className="new-story">
@@ -133,20 +124,11 @@ const Home = () => {
           </button>
         </div>
       )}
-
-      {/* NPC 대화창 표시 */}
-      {currentNPC && (
-        <NPCDialogue
-          npc={currentNPC}
-          onClose={() => setCurrentNPC(null)}
-        />
-      )}
-
-      {/* 랜덤 이벤트 모달 표시 */}
+      {currentNPC && <NPCDialogue npc={currentNPC} onClose={() => setCurrentNPC(null)} />}
       {currentEvent && (
         <RandomEventModal
           event={currentEvent}
-          onSelect={(option) => handleEventSelect(option)}
+          onSelect={handleEventSelect}
           onClose={() => setCurrentEvent(null)}
         />
       )}

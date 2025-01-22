@@ -1,3 +1,4 @@
+// src/pages/SummaryPage.jsx
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Avatar from "../components/Avatar";
@@ -27,7 +28,7 @@ const SummaryPage = () => {
     }
     return {
       message: "당신의 이야기는 아직 끝나지 않았습니다.",
-      image: "/assets/images/princess01.png",
+      image: "/assets/images/unfinished_story_ending.png",
     };
   };
 
@@ -40,6 +41,7 @@ const SummaryPage = () => {
       {/* 아바타 */}
       <div className="summary-avatar">
         <Avatar avatar={avatar} />
+        <div className="avatar-name">{avatar.name}</div> {/* 아바타 이름 추가 */}
       </div>
 
       {/* 스토리 진행 */}
