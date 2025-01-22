@@ -14,7 +14,7 @@ import useTemporaryState from "../hooks/useTemporaryState"; // 커스텀 훅
 
 const Home = () => {
   const navigate = useNavigate();
-  const { avatar, updateAvatar, updateStoryProgress, acquireItem, interactWithNPC } = useAvatar();
+  const { avatar, updateAvatar, updateStoryProgress, acquireItem, interactWithNPC, triggerRandomEvent } = useAvatar();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [newStory, setNewStory] = useTemporaryState(null, 3000); // 상태 초기화 커스텀 훅 사용
   const [acquiredItem, setAcquiredItem] = useTemporaryState(null, 3000);
@@ -92,6 +92,7 @@ const Home = () => {
           <QuestionCard
             question={storyQuestions[currentQuestionIndex]}
             onSelect={handleSelect}
+            triggerRandomEvent={triggerRandomEvent}
           />
           {newStory && (
             <div className="new-story">

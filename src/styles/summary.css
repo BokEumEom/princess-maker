@@ -1,51 +1,121 @@
-/* src/styles/summary.css */
-/* 결과 페이지 스타일 */
+/* 결과 페이지 전체 스타일 */
 .summary-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #a2c4f5, #e8eaf6);
+  background: linear-gradient(135deg, #d9e8f5, #f4faff);
   padding: 2rem;
   font-family: "Arial", sans-serif;
 }
 
+/* 타이틀 스타일 */
 .summary-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+/* 아바타 섹션 */
 .summary-avatar {
   margin-bottom: 2rem;
+  text-align: center;
   animation: float 3s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.avatar-name {
+  font-size: 1.5rem;
+  color: #4aa9ff;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* 스토리 진행 컨테이너 */
 .story-progress-container {
   width: 100%;
   max-width: 600px;
   margin-bottom: 2rem;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   animation: slideIn 1s ease-in-out;
+  text-align: center;
 }
 
-@keyframes slideIn {
+/* 엔딩 카드 */
+.ending-card {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.ending-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #4aa9ff;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ending-message {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.ending-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ending-image:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 다시 시작 버튼 */
+.restart-btn {
+  background: linear-gradient(135deg, #4aa9ff, #358fd4);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn:hover {
+  background: linear-gradient(135deg, #358fd4, #2c7bb6);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.restart-btn:active {
+  transform: translateY(0);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -56,75 +126,39 @@
   }
 }
 
-/* 엔딩 카드 스타일 */
-.ending-card {
-  text-align: center;
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.ending-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #4aa9ff;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.ending-message {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-
-.ending-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.ending-image:hover {
-  transform: scale(1.05);
-}
-
-/* 다시 시작 버튼 스타일 */
-.restart-btn {
-  background: #4aa9ff;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.restart-btn:hover {
-  background: #3a8fd9;
-  transform: translateY(-2px);
-}
-
-.restart-btn:active {
-  transform: translateY(0);
-}
-
-/* 애니메이션 효과 */
-@keyframes fadeIn {
+@keyframes slideIn {
   from {
     opacity: 0;
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .summary-title {
+    font-size: 2rem;
+  }
+
+  .story-progress-container,
+  .ending-card {
+    padding: 1rem;
+  }
+
+  .restart-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 }
