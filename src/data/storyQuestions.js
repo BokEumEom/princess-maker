@@ -101,7 +101,7 @@ const storyQuestions = [
         text: "군사력을 동원해 반란을 진압한다.",
         effect: { 열정적: 2, 부정적: 1 },
         result: "강압적인 리더",
-        triggerEvent: "mysterious_figure", // 신비로운 인물 이벤트 발생
+        triggerEvent: "mysterious_figure",
       },
       {
         text: "중재자를 보내 문제를 해결한다.",
@@ -136,7 +136,7 @@ const storyQuestions = [
         text: "참석을 거부하고 다른 문제에 집중한다.",
         effect: { 부정적: 2 },
         result: "고립적 성격",
-        triggerEvent: "storm", // 폭풍우 이벤트 발생
+        triggerEvent: "mystic_ritual", //
       },
       {
         text: "참석하며 연설을 준비해 자신의 입지를 높인다.",
@@ -270,7 +270,7 @@ const storyQuestions = [
         text: "저주를 두려워하지 않고 보물을 사용한다.",
         effect: { 열정적: 3 },
         result: "대담한 전사",
-        triggerEvent: "mystic_ritual", // 신비로운 인물 이벤트 발생
+        triggerEvent: "drop_magic_wand", // 마법의 지팡이 획득 이벤트 발생
       },
       {
         text: "보물을 안전하게 봉인하도록 명령한다.",

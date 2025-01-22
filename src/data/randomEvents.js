@@ -151,6 +151,25 @@ const randomEvents = [
     condition: () => Math.random() < 0.15, // 15% 확률로 발생
     image: "/assets/images/mystic_ritual.webp",
   },
+  {
+    id: "drop_magic_wand",
+    name: "마법의 지팡이 획득",
+    description: "마법의 지팡이를 획득했습니다. 어떻게 사용하시겠습니까?",
+    options: [
+      {
+        text: "지팡이의 힘을 시험해본다.",
+        effect: { intelligence: 10, health: -5 },
+        resultText: "지팡이의 힘을 시험하여 지능이 증가했지만 체력이 감소했습니다.",
+      },
+      {
+        text: "지팡이를 안전하게 보관한다.",
+        effect: { charm: 5 },
+        resultText: "지팡이를 안전하게 보관했습니다. 매력이 증가했습니다.",
+      },
+    ],
+    condition: () => Math.random() < 0.2, // 20% 확률로 발생
+    image: "/assets/images/drop_magic_wand.webp",
+  }
 ];
 
 export default randomEvents;
