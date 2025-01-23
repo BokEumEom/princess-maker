@@ -7,6 +7,7 @@ const initialAvatar = {
   stats: { charm: 15, health: 15, intelligence: 15 },
   storyProgress: [], // 스토리 진행 상태
   items: [], // 아이템 목록
+  npcs: [], // NPC 목록
 };
 
 const useAvatar = () => {
@@ -56,6 +57,12 @@ const useAvatar = () => {
     if (npc) {
       console.log(`${npc.name}: "${npc.dialogue}"`);
       updateAvatar(npc.effect);
+
+      // NPC를 avatar.npcs에 추가
+      setAvatar((prev) => ({
+        ...prev,
+        npcs: [...prev.npcs, npc],
+      }));
     }
   };
 

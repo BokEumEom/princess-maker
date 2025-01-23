@@ -1,13 +1,11 @@
-import React from "react";
-
 const Avatar = ({ avatar }) => {
   console.log("Avatar:", avatar);
   console.log("Stats:", avatar?.stats);
-  
+
   if (!avatar) return <div>Loading...</div>;
 
   const { stats } = avatar;
-  const avatarImage = `/assets/images/unfinished_story_ending.png`;
+  const avatarImage = `/assets/images/balanced_life_ending.jpg`;
 
   return (
     <div className="avatar-wrapper">

@@ -1,5 +1,3 @@
-import React from "react";
-
 const RandomEventModal = ({ event, onSelect, onClose }) => {
   if (!event) return null;
 

@@ -1,5 +1,3 @@
-import React from "react";
-
 const NPCDialogue = ({ npc, onClose }) => {
   if (!npc) return null;
 

@@ -16,7 +16,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.3, // 30% 확률로 발생
-    image: "/assets/images/storm.webp",
+    image: "/assets/images/randomevents/storm.webp",
   },
   {
     id: "treasure_chest",
@@ -35,7 +35,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.2, // 20% 확률로 발생
-    image: "/assets/images/treasure_chest.webp",
+    image: "/assets/images/randomevents/treasure_chest.webp",
   },
   {
     id: "mysterious_figure",
@@ -54,7 +54,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.25, // 25% 확률로 발생
-    image: "/assets/images/mysterious_figure.webp",
+    image: "/assets/images/randomevents/mysterious_figure.webp",
   },
   {
     id: "wild_animal",
@@ -73,7 +73,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.15, // 15% 확률로 발생
-    image: "/assets/images/wild_animal.webp",
+    image: "/assets/images/randomevents/wild_animal.webp",
   },
   {
     id: "royal_banquet",
@@ -92,7 +92,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.2, // 20% 확률로 발생
-    image: "/assets/images/royal_banquet.webp",
+    image: "/assets/images/randomevents/royal_banquet.webp",
   },
   {
     id: "forest_fire",
@@ -111,7 +111,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.15, // 15% 확률로 발생
-    image: "/assets/images/forest_fire.webp",
+    image: "/assets/images/randomevents/forest_fire.webp",
   },
   {
     id: "bandit_attack",
@@ -130,7 +130,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.1, // 10% 확률로 발생
-    image: "/assets/images/bandit_attack.webp",
+    image: "/assets/images/randomevents/bandit_attack.webp",
   },
   {
     id: "mystic_ritual",
@@ -149,7 +149,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.15, // 15% 확률로 발생
-    image: "/assets/images/mystic_ritual.webp",
+    image: "/assets/images/randomevents/mystic_ritual.webp",
   },
   {
     id: "drop_magic_wand",
@@ -168,7 +168,7 @@ const randomEvents = [
       },
     ],
     condition: () => Math.random() < 0.2, // 20% 확률로 발생
-    image: "/assets/images/drop_magic_wand.webp",
+    image: "/assets/images/randomevents/drop_magic_wand.webp",
   }
 ];
 

@@ -2,6 +2,7 @@ const storyQuestions = [
   {
     id: 1,
     question: "궁전 앞에 낯선 방문자가 찾아와 중요한 소식이 있다며 공주를 찾습니다. 어떻게 반응하시겠어요?",
+    image: "/assets/images/palace_visitor.jpg",
     options: [
       {
         text: "방문자를 바로 만나 이야기를 듣는다.",
@@ -31,6 +32,7 @@ const storyQuestions = [
   {
     id: 2,
     question: "여행 중 만난 상인이 신비로운 물건을 제안합니다. 어떻게 하시겠어요?",
+    image: "/assets/images/mysterious_merchant.jpg",
     options: [
       {
         text: "물건을 구입하고 왕국에 가져간다.",
@@ -61,6 +63,7 @@ const storyQuestions = [
   {
     id: 3,
     question: "왕국이 위협을 받고 있다는 소식이 전해집니다. 공주의 다음 행동은요?",
+    image: "/assets/images/kingdom_threat.jpg",
     options: [
       {
         text: "즉시 군대를 소집해 전쟁 준비를 한다.",
@@ -90,6 +93,7 @@ const storyQuestions = [
   {
     id: 4,
     question: "백성들이 반란을 일으켰습니다. 공주는 어떤 선택을 할까요?",
+    image: "/assets/images/kingdom_rebellion.jpg",
     options: [
       {
         text: "직접 반란의 원인을 듣고 문제를 해결한다.",
@@ -101,7 +105,7 @@ const storyQuestions = [
         text: "군사력을 동원해 반란을 진압한다.",
         effect: { 열정적: 2, 부정적: 1 },
         result: "강압적인 리더",
-        triggerEvent: "mysterious_figure",
+        triggerEvent: "mysterious_figure", // 신비로운 인물 이벤트 발생
       },
       {
         text: "중재자를 보내 문제를 해결한다.",
@@ -119,6 +123,7 @@ const storyQuestions = [
   {
     id: 5,
     question: "이웃 왕국에서 외교 행사에 초대했습니다. 공주는 어떤 선택을 할까요?",
+    image: "/assets/images/diplomatic_event.jpg",
     options: [
       {
         text: "가장 화려한 옷을 입고 행사에 참석한다.",
@@ -136,7 +141,7 @@ const storyQuestions = [
         text: "참석을 거부하고 다른 문제에 집중한다.",
         effect: { 부정적: 2 },
         result: "고립적 성격",
-        triggerEvent: "mystic_ritual", //
+        triggerEvent: "mystic_ritual", // 신비로운 의식 이벤트 발생
       },
       {
         text: "참석하며 연설을 준비해 자신의 입지를 높인다.",
@@ -149,12 +154,13 @@ const storyQuestions = [
   {
     id: 6,
     question: "어느 날 밤, 궁전의 한쪽에서 화재가 발생했습니다. 공주는 무엇을 우선적으로 해야할까요?",
+    image: "/assets/images/palace_fire.jpg",
     options: [
       {
         text: "화재 진압을 위해 신속히 명령을 내린다.",
         effect: { 열정적: 3 },
         result: "긴급 대응 능력이 뛰어난 공주",
-        triggerEvent: "forest_fire", // 야생 동물 이벤트 발생
+        triggerEvent: "forest_fire", // 숲 화재 이벤트 발생
       },
       {
         text: "백성을 대피시키는 데 집중한다.",
@@ -178,6 +184,7 @@ const storyQuestions = [
   {
     id: 7,
     question: "전쟁에서 적국의 고위 장군이 포로로 잡혔습니다. 공주는 이 포로를 어떻게 대해야 할까요?",
+    image: "/assets/images/war_prisoner.jpg",
     options: [
       {
         text: "적국과 협상을 위해 포로를 이용한다.",
@@ -195,7 +202,7 @@ const storyQuestions = [
         text: "처형을 명령하여 적들에게 경고한다.",
         effect: { 부정적: 3 },
         result: "단호한 전사",
-        triggerEvent: "bandit_attack", // 신비로운 인물 이벤트 발생
+        triggerEvent: "bandit_attack", // 산적 습격 이벤트 발생
       },
       {
         text: "포로를 심문해 정보를 얻는다.",
@@ -207,12 +214,13 @@ const storyQuestions = [
   {
     id: 8,
     question: "공주는 왕국 근처 신비로운 숲에 대한 소문을 듣습니다. 이 숲은 위험하지만, 큰 보물이 숨겨져 있다는 이야기가 있습니다.",
+    image: "/assets/images/mysterious_forest.jpg",
     options: [
       {
         text: "숲을 탐험하여 소문의 진위를 확인한다.",
         effect: { 열정적: 3 },
         result: "모험적인 성격",
-        triggerEvent: "forest_fire", // 보물 상자 이벤트 발생
+        triggerEvent: "forest_fire", // 숲 화재 이벤트 발생
       },
       {
         text: "병사를 보내 대신 조사하도록 한다.",
@@ -236,6 +244,7 @@ const storyQuestions = [
   {
     id: 9,
     question: "왕국에 전염병이 퍼지기 시작했습니다. 공주는 어떻게 대처할까요?",
+    image: "/assets/images/kingdom_plague.jpg",
     options: [
       {
         text: "병자들을 위한 격리 구역을 즉시 만든다.",
@@ -253,7 +262,7 @@ const storyQuestions = [
         text: "외부 지원을 요청하여 자원을 확보한다.",
         effect: { 회피적: 2, 희망적: 1 },
         result: "협력적 성격",
-        triggerEvent: "royal_banquet", // 폭풍우 이벤트 발생
+        triggerEvent: "royal_banquet", // 왕실 연회 이벤트 발생
       },
       {
         text: "병자들을 외곽으로 추방하여 확산을 막는다.",
@@ -265,6 +274,7 @@ const storyQuestions = [
   {
     id: 10,
     question: "공주는 오래된 왕가의 보물을 발견합니다. 하지만, 그 보물은 무거운 저주를 동반한다고 전해집니다.",
+    image: "/assets/images/cursed_treasure.jpg",
     options: [
       {
         text: "저주를 두려워하지 않고 보물을 사용한다.",

@@ -1,5 +1,3 @@
-import React from "react";
-
 const QuestionCard = ({ question, onSelect, triggerRandomEvent }) => {
   const handleClick = (effect, option) => {
     onSelect(effect, option);

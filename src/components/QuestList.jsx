@@ -1,7 +1,25 @@
-import React from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
+import RewardPopup from "./RewardPopup"; // 보상 팝업 컴포넌트 추가
 
 const QuestList = ({ quests, onComplete }) => {
+  const [showRewardPopup, setShowRewardPopup] = useState(false);
+  const [currentReward, setCurrentReward] = useState(null);
+
+  const handleComplete = (questId) => {
+    const quest = quests.find((q) => q.id === questId);
+    if (quest && quest.isCompleted) {
+      setCurrentReward(quest.reward); // 보상 저장
+      setShowRewardPopup(true); // 팝업 표시
+      onComplete(questId); // 퀘스트 완료 처리
+    }
+  };
+
+  const closeRewardPopup = () => {
+    setShowRewardPopup(false);
+    setCurrentReward(null);
+  };
+
   return (
     <div className="quest-list">
       <h3>퀘스트 목록</h3>
@@ -26,12 +44,15 @@ const QuestList = ({ quests, onComplete }) => {
               </div>
             )}
             {quest.isCompleted && (
-              <button className="quest-reward-button" onClick={() => onComplete(quest.id)}>
+              <button className="quest-reward-button" onClick={() => handleComplete(quest.id)}>
                 보상 받기
               </button>
             )}
           </div>
         ))
+      )}
+      {showRewardPopup && currentReward && (
+        <RewardPopup reward={currentReward} onClose={closeRewardPopup} />
       )}
     </div>
   );

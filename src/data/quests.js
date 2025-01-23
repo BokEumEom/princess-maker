@@ -13,13 +13,13 @@ const quests = [
   },
   {
     id: "quest2",
-    title: "전설의 무기 찾기",
-    description: "마법의 지팡이를 획득하세요.",
+    title: "왕실 보물 찾기",
+    description: "왕실 보물을 획득하세요.",
     conditionType: "items",
     condition: (items = []) => {
-      const hasMagicWand = items.some((item) => item.id === "magic_wand");
-      const progress = hasMagicWand ? 100 : 0;
-      return { isCompleted: hasMagicWand, progress };
+      const hasRoyalTreasure = items.some((item) => item.id === "royal_treasure");
+      const progress = hasRoyalTreasure ? 100 : 0;
+      return { isCompleted: hasRoyalTreasure, progress };
     },
     reward: { stats: { intelligence: 10 } },
     isCompleted: false,

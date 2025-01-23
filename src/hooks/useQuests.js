@@ -28,7 +28,7 @@ const useQuests = (avatar, initialQuests, acquireItem, updateAvatar) => {
         return quest;
       })
     );
-  }, [avatar.stats, avatar.items, avatar.npcs]);
+  }, [avatar.stats, avatar.items, avatar.npcs]); // avatar.items와 avatar.npcs를 의존성 배열에 추가
 
   // 퀘스트 완료 처리
   const completeQuest = (questId) => {

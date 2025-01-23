@@ -28,7 +28,7 @@ const SummaryPage = () => {
     }
     return {
       message: "당신의 이야기는 아직 끝나지 않았습니다.",
-      image: "/assets/images/unfinished_story_ending.png",
+      image: "/assets/images/balanced_life_ending.jpg",
     };
   };
 

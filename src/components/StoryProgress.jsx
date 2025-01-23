@@ -1,5 +1,3 @@
-import React from "react";
-
 const StoryProgress = ({ storyProgress }) => (
   <div className="story-progress">
     <h3 className="progress-title">스토리 진행</h3>

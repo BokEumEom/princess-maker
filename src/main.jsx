@@ -11,6 +11,7 @@ import './styles/items.css'
 import './styles/npcs.css'
 import './styles/random.css'
 import './styles/quests.css'
+import './styles/reward.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
