@@ -1,0 +1,28 @@
+/* 스토리 이벤트도 item-notification 처럼 fixed Toast로 표시 */
+.new-story {
+  position: fixed;
+  bottom: 90px; /* 아이템 토스트(20px)와 겹치지 않도록 */
+  right: 20px;
+  background: #ff9800;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 999; /* 필요 시 조정 */
+}
+
+.new-story-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.new-story-text {
+  margin: 0;
+  font-size: 0.9rem;
+}

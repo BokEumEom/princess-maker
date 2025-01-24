@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 9999; /* ★ 추가: 높은 레이어로 표시 */
 }
 
 .item-notification-header {
