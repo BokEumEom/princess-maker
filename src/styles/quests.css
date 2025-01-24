@@ -25,7 +25,7 @@
 
 /* Quest List Header */
 .quest-list h3 {
-  font-size: 1.2rem; /* 기존 1.4rem에서 축소 */
+  font-size: 1rem; /* 기존 1.4rem에서 축소 */
   margin-bottom: 1rem; /* 간격도 축소 */
   color: #fff;
   text-align: center;
@@ -58,7 +58,7 @@
 }
 
 .quest-header h4 {
-  font-size: 1rem; /* 기존 1.2rem에서 축소 */
+  font-size: 0.75rem; /* 기존 1.2rem에서 축소 */
   color: #4aa9ff;
   margin: 0;
   font-weight: 700;
@@ -66,7 +66,7 @@
 }
 
 .quest-status {
-  font-size: 0.75rem; /* 기존 0.85rem에서 축소 */
+  font-size: 0.65rem; /* 기존 0.85rem에서 축소 */
   font-weight: bold;
   padding: 0.3rem 0.6rem; /* 패딩 축소 */
   border-radius: 10px; /* 기존 12px에서 축소 */
@@ -89,7 +89,7 @@
 
 /* Quest Description */
 .quest-description {
-  font-size: 0.9rem; /* 기존 1rem에서 축소 */
+  font-size: 0.75rem; /* 기존 1rem에서 축소 */
   color: #ddd;
   margin: 0 0 0.8rem 0; /* 간격 축소 */
   line-height: 1.4; /* 줄 간격 축소 */

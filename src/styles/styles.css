@@ -28,22 +28,6 @@ body {
   min-height: 100vh;
 }
 
-/* Home Container */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Main Section */
-.main-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 /* Question Section */
 .question-section {
   flex: 2;
@@ -53,17 +37,6 @@ body {
   box-shadow: var(--box-shadow);
   padding: 1rem;
   text-align: left;
-}
-
-/* Avatar Section */
-.avatar-section {
-  flex: 1;
-  max-width: 300px;
-  background: var(--white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  text-align: center;
-  padding: 1rem;
 }
 
 /* Responsive Design */
