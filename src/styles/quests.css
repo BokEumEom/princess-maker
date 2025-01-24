@@ -41,7 +41,6 @@
   padding: 0.8rem; /* 기존 1rem에서 축소 */
   margin-bottom: 1rem; /* 간격 축소 */
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .quest-item:hover {
@@ -125,7 +124,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: linear-gradient(90deg, #4aa9ff, #3a8fd9);
+  background: rgba(224, 224, 224, 0.2);
   color: #fff;
   border: none;
   border-radius: 10px; /* 기존 12px에서 축소 */
@@ -137,11 +136,11 @@
   display: flex;
   align-items: center;
   gap: 0.4rem; /* 간격 축소 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .quest-list-toggle-button:hover {
-  background: linear-gradient(90deg, #3a8fd9, #357cba);
+  background: rgba(224, 224, 224, 0.2);
   transform: translateY(-2px);
 }
 

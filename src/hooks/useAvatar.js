@@ -1,16 +1,11 @@
+// src/hooks/useAvatar.js
 import { useState } from "react";
 import npcs from "../data/npcs"; // npcs 데이터 가져오기
 import items from "../data/items";
 import randomEvents from "../data/randomEvents";
 
-const STAT_KEYS_MAP = {
-  charm: "매력",
-  health: "건강",
-  intelligence: "지능",
-};
-
 const initialAvatar = {
-  stats: { 매력: 15, 건강: 15, 지능: 15 }, // 한글로 변경
+  stats: { charm: 15, health: 15, intelligence: 15 }, // 영어로 유지
   storyProgress: [], // 스토리 진행 상태
   items: [], // 아이템 목록
   npcs: [], // NPC 목록
@@ -24,8 +19,7 @@ const useAvatar = () => {
     setAvatar((prev) => {
       const updatedStats = { ...prev.stats };
       Object.keys(effect).forEach((key) => {
-        const koreanKey = STAT_KEYS_MAP[key] || key; // 영어 키를 한글로 변환
-        updatedStats[koreanKey] = Math.max(0, Math.min(100, (updatedStats[koreanKey] || 0) + effect[key])); // 0~100 사이로 제한
+        updatedStats[key] = Math.max(0, Math.min(100, (updatedStats[key] || 0) + effect[key])); // 0~100 사이로 제한
       });
       return { ...prev, stats: updatedStats };
     });

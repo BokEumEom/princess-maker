@@ -3,23 +3,33 @@
   flex: 1;
   max-width: 180px;
   text-align: left;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* 아바타 이미지 */
+.avatar-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 아바타 이미지 컨테이너 */
 .avatar-container {
-  width: 100%;
-  max-width: 150px;
+  width: 120px; /* 고정 너비 */
+  height: 120px; /* 고정 높이 */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
+/* 아바타 이미지 */
 .avatar-image {
-  width: 100%;
-  border-radius: 15px;
+  width: 100%; /* 컨테이너 너비에 맞춤 */
+  object-fit: cover; /* 이미지 비율 유지하며 채움 */
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -30,18 +40,41 @@
 
 /* 능력치 컨테이너 */
 .stats-container {
-  margin-top: 1rem;
+  margin-top: 0.3rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 능력치 바 */
 .stat-bar {
   display: flex;
   align-items: center;
-  gap: 1rem;
+}
+
+/* 아이콘 스타일 */
+.stat-icon {
+  width: 1.3rem; /* 아이콘 크기 조정 */
+  height: 1.3rem;
+  margin-right: 0.5rem; /* 아이콘과 라벨 사이 간격 */
+  color: #777777; /* 아이콘 색상 */
 }
 
 /* 라벨 */
@@ -89,48 +122,31 @@
   color: #555;
 }
 
-/* 토글 버튼 스타일 */
-.toggle-stats-btn {
-  margin-top: 0.8rem; /* 여백 줄임 */
-  padding: 0.4rem 0.8rem; /* 패딩 줄임 */
-  font-size: 0.9rem; /* 폰트 크기 줄임 */
-  font-weight: bold;
-  color: white;
-  background: #4aa9ff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.toggle-stats-btn:hover {
-  background: #007bff;
-}
-
-.toggle-stats-btn:active {
-  background: #005bb5;
-}
-
 /* 반응형 스타일 */
 @media (max-width: 480px) {
   .avatar-wrapper {
-    padding: 8px; /* 모바일에서 내부 여백 조정 */
-    max-width: 140px; /* 모바일에서 크기 조정 */
+    padding: 8px;
+    max-width: 140px;
   }
 
   .avatar-container {
-    max-width: 120px; /* 모바일에서 크기 조정 */
+    max-width: 120px;
+  }
+
+  .stat-icon {
+    width: 1rem; /* 모바일에서 아이콘 크기 조정 */
+    height: 1rem;
   }
 
   .stat-label {
-    font-size: 0.8rem; /* 모바일에서 폰트 크기 조정 */
+    font-size: 0.8rem;
   }
 
   .progress-bar {
-    height: 8px; /* 모바일에서 높이 조정 */
+    height: 8px;
   }
 
   .stat-value {
-    font-size: 0.8rem; /* 모바일에서 폰트 크기 조정 */
+    font-size: 0.8rem;
   }
 }
