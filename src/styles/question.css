@@ -4,7 +4,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* 스크롤 비활성화 */
   height: 100%;
 }
 
@@ -45,7 +44,7 @@ html, body {
 /* (5) 질문, 버튼 등 메인 컨텐츠 오버레이 */
 .overlay-content {
   position: absolute;
-  bottom: 10%; /* 화면 하단에서 약간 위로 올림 */
+  bottom: 20%; /* 화면 하단에서 약간 위로 올림 */
   left: 50%;
   transform: translateX(-50%);
   width: 80%; /* 가운데 정렬 위해 */
