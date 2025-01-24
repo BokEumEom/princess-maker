@@ -5,6 +5,49 @@
   color: #4aa9ff;
 }
 
+/* 질문 이미지와 아바타 오버레이 컨테이너 */
+.question-image-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 아바타 오버레이 */
+.avatar-overlay {
+  position: absolute;
+  top: 10px; /* 상단에서 10px 아래로 */
+  left: 10px; /* 왼쪽에서 10px 오른쪽으로 */
+  z-index: 10; /* 이미지 위에 표시 */
+  width: 200px; /* 아바타 크기 조정 */
+  height: auto; /* 높이 자동 조정 */
+}
+
+/* 모바일 최적화 */
+@media (max-width: 480px) {
+  .avatar-overlay {
+    width: 150px; /* 모바일에서 크기 조정 */
+  }
+}
+
+.question-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* 질문 텍스트 */
+.question-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #4aa9ff;
+  margin-bottom: 1.5rem;
+}
+
+/* 옵션 버튼 스타일 */
 .options {
   display: flex;
   flex-direction: column;

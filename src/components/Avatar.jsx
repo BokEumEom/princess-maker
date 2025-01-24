@@ -1,49 +1,47 @@
+import { useState } from "react";
+
 const Avatar = ({ avatar }) => {
-  console.log("Avatar:", avatar);
-  console.log("Stats:", avatar?.stats);
+  const [isStatsVisible, setStatsVisible] = useState(false); // 상태 관리
 
   if (!avatar) return <div>Loading...</div>;
 
   const { stats } = avatar;
-  const avatarImage = `/assets/images/balanced_life_ending.jpg`;
+  const avatarImage = avatar.image || "/assets/images/balanced_life_ending.jpg";
 
   return (
     <div className="avatar-wrapper">
-      {/* 아바타 이미지 */}
+      {/* Avatar Image */}
       <div className="avatar-container">
         <img src={avatarImage} alt="Avatar" className="avatar-image" />
       </div>
 
-      {/* 능력치 표시 */}
-      <div className="stats-container">
-        <div className="stat-bar">
-          <span className="stat-label">Charm:</span>
-          <div className="progress-bar">
-            <div
-              className="progress-fill charm"
-              style={{ width: `${stats.charm}%` }}
-            ></div>
-          </div>
+      {/* Toggle Button */}
+      <button
+        className="toggle-stats-btn"
+        onClick={() => setStatsVisible((prev) => !prev)}
+      >
+        {isStatsVisible ? "Hide Stats" : "Show Stats"}
+      </button>
+
+      {/* Stats */}
+      {isStatsVisible && (
+        <div className="stats-container">
+          {Object.entries(stats).map(([stat, value]) => (
+            <div className="stat-bar" key={stat}>
+              <span className="stat-label">
+                {stat.charAt(0).toUpperCase() + stat.slice(1)}:
+              </span>
+              <div className="progress-bar">
+                <div
+                  className={`progress-fill ${stat}`}
+                  style={{ width: `${value}%` }}
+                ></div>
+              </div>
+              <span className="stat-value">{value}%</span>
+            </div>
+          ))}
         </div>
-        <div className="stat-bar">
-          <span className="stat-label">Health:</span>
-          <div className="progress-bar">
-            <div
-              className="progress-fill health"
-              style={{ width: `${stats.health}%` }}
-            ></div>
-          </div>
-        </div>
-        <div className="stat-bar">
-          <span className="stat-label">Intelligence:</span>
-          <div className="progress-bar">
-            <div
-              className="progress-fill intelligence"
-              style={{ width: `${stats.intelligence}%` }}
-            ></div>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -2,7 +2,7 @@ const storyQuestions = [
   {
     id: 1,
     question: "궁전 앞에 낯선 방문자가 찾아와 중요한 소식이 있다며 공주를 찾습니다. 어떻게 반응하시겠어요?",
-    image: "/assets/images/palace_visitor.jpg",
+    image: "/assets/images/questions/palace_visitor.webp",
     options: [
       {
         text: "방문자를 바로 만나 이야기를 듣는다.",
@@ -32,7 +32,7 @@ const storyQuestions = [
   {
     id: 2,
     question: "여행 중 만난 상인이 신비로운 물건을 제안합니다. 어떻게 하시겠어요?",
-    image: "/assets/images/mysterious_merchant.jpg",
+    image: "/assets/images/questions/mysterious_merchant.webp",
     options: [
       {
         text: "물건을 구입하고 왕국에 가져간다.",
@@ -63,7 +63,7 @@ const storyQuestions = [
   {
     id: 3,
     question: "왕국이 위협을 받고 있다는 소식이 전해집니다. 공주의 다음 행동은요?",
-    image: "/assets/images/kingdom_threat.jpg",
+    image: "/assets/images/questions/kingdom_threat.webp",
     options: [
       {
         text: "즉시 군대를 소집해 전쟁 준비를 한다.",
@@ -93,7 +93,7 @@ const storyQuestions = [
   {
     id: 4,
     question: "백성들이 반란을 일으켰습니다. 공주는 어떤 선택을 할까요?",
-    image: "/assets/images/kingdom_rebellion.jpg",
+    image: "/assets/images/questions/kingdom_rebellion.webp",
     options: [
       {
         text: "직접 반란의 원인을 듣고 문제를 해결한다.",
@@ -123,7 +123,7 @@ const storyQuestions = [
   {
     id: 5,
     question: "이웃 왕국에서 외교 행사에 초대했습니다. 공주는 어떤 선택을 할까요?",
-    image: "/assets/images/diplomatic_event.jpg",
+    image: "/assets/images/questions/diplomatic_event.webp",
     options: [
       {
         text: "가장 화려한 옷을 입고 행사에 참석한다.",
@@ -154,7 +154,7 @@ const storyQuestions = [
   {
     id: 6,
     question: "어느 날 밤, 궁전의 한쪽에서 화재가 발생했습니다. 공주는 무엇을 우선적으로 해야할까요?",
-    image: "/assets/images/palace_fire.jpg",
+    image: "/assets/images/questions/palace_fire.webp",
     options: [
       {
         text: "화재 진압을 위해 신속히 명령을 내린다.",
@@ -184,7 +184,7 @@ const storyQuestions = [
   {
     id: 7,
     question: "전쟁에서 적국의 고위 장군이 포로로 잡혔습니다. 공주는 이 포로를 어떻게 대해야 할까요?",
-    image: "/assets/images/war_prisoner.jpg",
+    image: "/assets/images/questions/war_prisoner.webp",
     options: [
       {
         text: "적국과 협상을 위해 포로를 이용한다.",
@@ -214,7 +214,7 @@ const storyQuestions = [
   {
     id: 8,
     question: "공주는 왕국 근처 신비로운 숲에 대한 소문을 듣습니다. 이 숲은 위험하지만, 큰 보물이 숨겨져 있다는 이야기가 있습니다.",
-    image: "/assets/images/mysterious_forest.jpg",
+    image: "/assets/images/questions/mysterious_forest.webp",
     options: [
       {
         text: "숲을 탐험하여 소문의 진위를 확인한다.",
@@ -244,7 +244,7 @@ const storyQuestions = [
   {
     id: 9,
     question: "왕국에 전염병이 퍼지기 시작했습니다. 공주는 어떻게 대처할까요?",
-    image: "/assets/images/kingdom_plague.jpg",
+    image: "/assets/images/questions/kingdom_plague.webp",
     options: [
       {
         text: "병자들을 위한 격리 구역을 즉시 만든다.",
@@ -274,7 +274,7 @@ const storyQuestions = [
   {
     id: 10,
     question: "공주는 오래된 왕가의 보물을 발견합니다. 하지만, 그 보물은 무거운 저주를 동반한다고 전해집니다.",
-    image: "/assets/images/cursed_treasure.jpg",
+    image: "/assets/images/questions/cursed_treasure.webp",
     options: [
       {
         text: "저주를 두려워하지 않고 보물을 사용한다.",

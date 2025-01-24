@@ -1,5 +1,5 @@
 // src/pages/SummaryPage.jsx
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Avatar from "../components/Avatar";
 import StoryProgress from "../components/StoryProgress";
