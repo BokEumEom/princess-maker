@@ -27,7 +27,7 @@ const Home = () => {
   const [acquiredItem, setAcquiredItem] = useTemporaryState(null, 3000);
   const [currentNPC, setCurrentNPC] = React.useState(null);
   const [currentEvent, setCurrentEvent] = React.useState(null);
-  const [isQuestListVisible, setIsQuestListVisible] = React.useState(true);
+  const [isQuestListVisible, setIsQuestListVisible] = React.useState(false);
 
   // useQuests hook
   const { currentQuests, completeQuest } = useQuests(
