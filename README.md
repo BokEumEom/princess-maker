@@ -1,8 +1,47 @@
-# React + Vite
+# 🎮 인터랙티브 퀘스트 게임
+사용자가 선택을 통해 이야기를 진행하며, 능력치와 스토리 전개가 변화하는 게임입니다. 퀘스트를 수행하고 NPC와 상호작용하며 다양한 결과를 경험하세요.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 주요 기능
+### 🏆 **스토리 중심 게임 플레이**
+- 몰입감 있는 질문과 선택지가 제공됩니다.
+- 사용자의 선택에 따라 이야기의 방향이 달라집니다.
+- 랜덤 이벤트가 발생하여 예측 불가능한 상황을 만듭니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎭 **캐릭터 & 능력치 시스템**
+- 매력(Charm), 건강(Health), 지능(Intelligence) 능력치가 반영된 아바타.
+- 선택에 따라 능력치가 증가하거나 감소합니다.
+- 애니메이션과 진행 바를 통해 능력치 변화를 쉽게 확인할 수 있습니다.
+
+### 📜 **퀘스트 & 업적 시스템**
+- 퀘스트 목록을 확인하고 완료하면 보상을 획득할 수 있습니다.
+- 퀘스트 진행 상태를 실시간으로 추적할 수 있습니다.
+- 퀘스트 UI를 숨기거나 표시하는 기능이 제공됩니다.
+
+### 💬 **NPC 대화 & 랜덤 이벤트**
+- NPC와 상호작용하며 다양한 대화를 나눌 수 있습니다.
+- 게임 내에서 랜덤으로 이벤트가 발생하여 새로운 경험을 제공합니다.
+- 선택에 따라 스토리와 능력치에 영향을 미치는 요소가 추가됩니다.
+
+---
+
+## 🛠️ 기술 스택
+| **기술**            | **사용 목적** |
+|-----------------|------------------|
+| React (Vite)   | 빠르고 가벼운 프론트엔드 프레임워크 |
+| React Router   | 페이지 간 내비게이션 처리 |
+| React Hooks    | 상태 관리 및 UI 로직 처리 |
+| CSS Modules    | 컴포넌트별 스타일 분리 |
+| Vanilla CSS    | 맞춤형 UI 애니메이션 적용 |
+| Conic Gradient | 원형 진행 바(Stat Bar) 시각화 |
+
+---
+
+## 🔧 설치 및 실행 방법
+1. **레포지토리 클론**
+```bash
+git clone https://github.com/your-repo/interactive-quest-game.git
+cd interactive-quest-game
+npm install
+npm run dev
