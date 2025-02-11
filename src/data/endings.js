@@ -5,7 +5,7 @@ const endings = [
     // 예: health >= 25, charm >= 25 면 낙천적 / 희망적 리더
     condition: (stats) => stats.health >= 25 && stats.charm >= 25,
     message: "당신은 낙천적이고 꿈 많은 지도자 공주입니다. 리더십을 발휘하여 왕국을 번영으로 이끕니다.",
-    image: "/assets/images/endings/optimistic_leader.webp",
+    image: "/assets/images/endings/end_2_optimistic_leader.webp"
   },
   {
     id: "realistic_strategist",
@@ -19,14 +19,14 @@ const endings = [
     // charm이 꽤 높고 health가 적당히 유지되고 있으면 평화주의
     condition: (stats) => stats.charm >= 30 && stats.health >= 10,
     message: "당신은 평화를 중시하는 평화주의 공주입니다. 갈등을 해결하고 조화를 이루는 조력자 역할을 합니다.",
-    image: "/assets/images/endings/peaceful_mediator.webp",
+    image: "/assets/images/endings/end_3_gentle_ruler.webp",
   },
   {
     id: "visionary_innovator",
     // charm & intelligence 모두 높은 경우 = 혁신가
     condition: (stats) => stats.charm >= 20 && stats.intelligence >= 20,
     message: "당신은 꿈과 비전을 가진 혁신가 공주입니다. 새로운 아이디어로 왕국을 변화시킵니다.",
-    image: "/assets/images/endings/visionary_innovator.webp",
+    image: "/assets/images/endings/end_4_visionary_innovator.webp",
   },
   {
     id: "courageous_warrior",
@@ -38,16 +38,16 @@ const endings = [
   {
     id: "isolated_princess",
     // health, charm 모두 낮으면 고립
-    condition: (stats) => stats.health <= 5 && stats.charm <= 5,
+    condition: (stats) => stats.health <= 4 && stats.charm <= 5,
     message: "당신은 고립된 공주입니다. 주변 사람들과의 갈등 속에서 혼자 고립되며 신뢰를 잃습니다.",
-    image: "/assets/images/endings/isolated_princess.webp",
+    image: "/assets/images/endings/end_9_coldhearted_ruler.webp",
   },
   {
     id: "dependent_princess",
     // health & intelligence 모두 낮으면 의존적
-    condition: (stats) => stats.health <= 5 && stats.intelligence <= 5,
+    condition: (stats) => stats.health <= 8 && stats.intelligence <= 8,
     message: "당신은 소극적인 의존형 공주입니다. 중요한 결정을 내리지 못하고 타인에게만 의존합니다.",
-    image: "/assets/images/endings/dependent_princess.webp",
+    image: "/assets/images/endings/end_10_avoidant_princess.webp",
   },
   {
     id: "idealistic_princess",
@@ -59,9 +59,9 @@ const endings = [
   {
     id: "fallen_princess",
     // 세 스탯 모두 낮으면 몰락
-    condition: (stats) => stats.health <= 0 && stats.charm <= 0 && stats.intelligence <= 0,
+    condition: (stats) => stats.health <= 5 && stats.charm <= 5 && stats.intelligence <= 5,
     message: "당신은 추락한 공주입니다. 왕국을 위기에 빠뜨리고 추방되었습니다.",
-    image: "/assets/images/endings/fallen_princess.webp",
+    image: "/assets/images/endings/end_15_fallen_princess.webp",
   },
   {
     id: "balanced_princess",
@@ -69,7 +69,7 @@ const endings = [
     condition: (stats) => 
       stats.health >= 20 && stats.charm >= 20 && stats.intelligence >= 20,
     message: "당신은 조화를 이루는 현실주의 공주입니다. 균형 잡힌 판단으로 왕국을 이끕니다.",
-    image: "/assets/images/endings/balanced_princess.webp",
+    image: "/assets/images/endings/end_14_balanced_princess.webp",
   },
   {
     id: "unfinished_story",

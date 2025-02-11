@@ -12,7 +12,7 @@
   position: absolute;
   top: 0;
   left: 1rem;
-  width: 2px;
+  width: 1px;
   height: 100%;
   background: #ddd;
 }
@@ -30,10 +30,10 @@
 
 .timeline-icon {
   position: absolute;
-  left: 0;
-  top: 0.2rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  left: -18px;
+  top: 0;
+  width: 5px;
+  height: 5px;
   background: #4aa9ff;
   border-radius: 50%;
   display: flex;
@@ -41,7 +41,7 @@
   justify-content: center;
   color: #fff;
   font-size: 0.8rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .timeline-content {
@@ -55,6 +55,7 @@
   margin: 0;
   font-size: 1rem;
   color: #555;
+  text-align:left
 }
 
 .timeline-item.highlight .timeline-icon {

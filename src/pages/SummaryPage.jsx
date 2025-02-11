@@ -36,22 +36,13 @@ const SummaryPage = () => {
 
   return (
     <div className="summary-page">
-      <h2 className="summary-title">결과 요약</h2>
 
-      {/* 아바타 */}
-      <div className="summary-avatar">
-        <Avatar avatar={avatar} />
-        <div className="avatar-name">{avatar.name}</div> {/* 아바타 이름 추가 */}
-      </div>
 
-      {/* 스토리 진행 */}
-      <div className="story-progress-container">
-        <StoryProgress storyProgress={avatar.storyProgress} />
-      </div>
+
 
       {/* 최종 엔딩 */}
       <div className="ending-card">
-        <h3 className="ending-title">최종 엔딩</h3>
+        <h3 className="ending-title">PrincessMaker</h3>
         <p className="ending-message">{ending.message}</p>
         <img
           src={ending.image}
@@ -59,6 +50,12 @@ const SummaryPage = () => {
           className="ending-image"
         />
       </div>
+      {/* 스토리 진행 */}
+      <h2 className="summary-title">결과 요약</h2>
+      <div className="story-progress-container">
+        <StoryProgress storyProgress={avatar.storyProgress} />
+      </div>
+
 
       {/* 다시 시작 버튼 */}
       <button className="restart-btn" onClick={() => navigate("/")}>
@@ -67,5 +64,6 @@ const SummaryPage = () => {
     </div>
   );
 };
+
 
 export default SummaryPage;

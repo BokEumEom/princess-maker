@@ -11,7 +11,7 @@
   padding: 1.2rem; /* 기존 1.5rem에서 축소 */
   backdrop-filter: blur(12px);
   opacity: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: slideIn 0.4s ease-out;
 }
@@ -20,7 +20,7 @@
   opacity: 0;
   transform: translateX(120%);
   pointer-events: none;
-  animation: slideOut 0.4s ease-in;
+  animation: slideOut 0.2s ease-in;
 }
 
 /* Quest List Header */
@@ -30,7 +30,7 @@
   color: #fff;
   text-align: center;
   font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 1px 1px 4p.quest-list-containerx rgba(0, 0, 0, 0.5); */
 }
 
 /* Quest Item */
@@ -61,7 +61,7 @@
   color: #4aa9ff;
   margin: 0;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); */
 }
 
 .quest-status {
@@ -77,13 +77,14 @@
 .quest-status.completed {
   background: rgba(50, 205, 50, 0.2);
   color: #32cd32;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); */
 }
 
 .quest-status.in-progress {
   background: rgba(255, 193, 7, 0.2);
-  color: #ffc107;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  /* color: #ffc107; */
+  color: #fff;
+  /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); */
 }
 
 /* Quest Description */
@@ -92,7 +93,7 @@
   color: #ddd;
   margin: 0 0 0.8rem 0; /* 간격 축소 */
   line-height: 1.4; /* 줄 간격 축소 */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
 }
 
 /* Reward Button */
@@ -101,8 +102,8 @@
   color: #fff;
   border: none;
   border-radius: 10px; /* 기존 12px에서 축소 */
-  padding: 0.6rem 0.8rem; /* 패딩 축소 */
-  font-size: 0.85rem; /* 텍스트 크기 축소 */
+  padding: 2px; /* 패딩 축소 */
+  font-size: 12px; /* 텍스트 크기 축소 */
   font-weight: bold;
   cursor: pointer;
   text-align: center;
@@ -122,31 +123,31 @@
 /* Toggle Button */
 .quest-list-toggle-button {
   position: fixed;
-  top: 20px;
+  top: 18px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.30);
+  background: rgba(0, 0, 0, 1);
   color: #fff;
   border: none;
-  border-radius: 10px; /* 기존 12px에서 축소 */
-  padding: 0.6rem; /* 패딩 축소 */
-  font-size: 0.9rem; /* 텍스트 크기 축소 */
+  border-radius: 4px; /* 기존 12px에서 축소 */
+  padding: 6px; /* 패딩 축소 */
+  font-size: 12px; /* 텍스트 크기 축소 */
   cursor: pointer;
   z-index: 1001;
   transition: background 0.3s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 0.4rem; /* 간격 축소 */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  gap: 0.2rem; /* 간격 축소 */
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); */
 }
 
-.quest-list-toggle-button:hover {
+/* .quest-list-toggle-button:hover {
   background: rgba(0, 0, 0, 0.30);
   transform: translateY(-2px);
 }
 
 .quest-list-toggle-button:active {
   transform: scale(0.97);
-}
+} */
 
 /* Progress Bar */
 .quest-progress {
