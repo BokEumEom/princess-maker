@@ -4,8 +4,9 @@ const RandomEventModal = ({ event, onSelect, onClose }) => {
   return (
     <div className="random-event-overlay">
       <div className="random-event-modal">
-        <h3>{event.name}</h3>
+        
         <img src={event.image} alt={event.name} className="event-image" />
+        <h3>{event.name}</h3>
         <p>{event.description}</p>
         <div className="event-options">
           {event.options.map((option, index) => (
