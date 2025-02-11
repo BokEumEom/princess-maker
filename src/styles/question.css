@@ -49,10 +49,9 @@ html, body {
   transform: translateX(-50%);
   width: 80%; /* 가운데 정렬 위해 */
   z-index: 20;
-  background-color: rgba(255, 255, 255, 0.3); 
+  background-color: rgba(255, 255, 255, 0.7); 
   border-radius: 15px;
-  padding: 1rem;
-  text-align: center; /* 필요 시 조정 */
+  padding: 30px 20px;
 }
 
 /* 질문 텍스트 */
@@ -70,17 +69,17 @@ html, body {
 }
 
 .overlay-content .option-btn {
-  padding: 0.8rem;
+  padding: 14px 10px;
   font-size: 0.8rem;
   font-weight: bold;
   border: none;
-  background: rgba(0, 0, 0, 0.30);
+  background: rgba(0, 0, 0, 0.60);
   color: rgb(255, 255, 255);
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); */
 }
 
 .overlay-content .option-btn:hover {
@@ -99,9 +98,8 @@ html, body {
 /* 반응형 예시: 작은 화면에서는 overlay-content 높이 조정 등 */
 @media (max-width: 480px) {
   .overlay-content {
-    bottom: 5%;
+    bottom: 60px;
     width: 90%;
-    padding: 0.5rem;
   }
   .overlay-content .question-text {
     font-size: 1rem;

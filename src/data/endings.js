@@ -12,7 +12,7 @@ const endings = [
     // 예: health가 낮고(int <some threshold), intelligence가 중간 이상이면 냉철한 전략가
     condition: (stats) => stats.health <= 5 && stats.intelligence >= 15,
     message: "당신은 냉철하고 현실적인 전략가 공주입니다. 위기에도 흔들리지 않는 판단력을 지녔습니다.",
-    image: "/assets/images/endings/realistic_strategist.webp",
+    image: "/assets/images/endings/end_8_realistic_strategist.webp",
   },
   {
     id: "peaceful_mediator",

@@ -91,7 +91,7 @@
 }
 
 .ending-image:hover {
-  transform: scale(1.08);
+  /* transform: scale(1.08); */
   /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
 }
 
